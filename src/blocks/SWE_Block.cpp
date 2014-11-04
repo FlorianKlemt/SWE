@@ -29,6 +29,8 @@
 #include "SWE_Block.hh"
 #include "tools/help.hh"
 
+#include "solvers_2/fsolver.cpp"
+
 #include <cmath>
 #include <iostream>
 #include <cassert>
@@ -755,4 +757,132 @@ void SWE_Block::synchBathymetryBeforeRead() {}
  * before an external access to the unknowns
  */
 void SWE_Block::synchCopyLayerBeforeRead() {}
+
+
+/**
+ * Constructor for SWE_DimensionalSplitting
+ * Declaring arrays and variables
+ */
+SWE_DimensionalSplitting::SWE_DimensionalSplitting(int l_nx, int l_ny, float l_dx, float l_dy) :
+	SWE_Block (l_nx, l_ny, l_dx, l_dy),
+		x_hNetUpdatesLeft (nx + 1, ny),
+		x_hNetUpdatesRight (nx + 1, ny),
+		x_huNetUpdatesLeft (nx + 1, ny),
+		x_huNetUpdatesRight (nx + 1, ny),
+
+		y_hNetUpdatesBottom (nx, ny + 1),
+		y_hNetUpdatesTop (nx, ny + 1),
+		y_hvNetUpdatesBottom (nx, ny + 1),
+		y_hvNetUpdatesTop (nx, ny + 1)
+{
+	maxWaveSpeed_x=0.0f;
+	maxWaveSpeed_y=0.0f;
+}
+
+
+
+/**
+ * compute numerical fluxes with x and y sweep
+ */
+void SWE_DimensionalSplitting::computeNumericalFluxes()
+{
+
+	//x-Sweep
+	for(unsigned int i=1;i<nx+2;i++)
+	{
+		for(unsigned int j=1;i<ny+1;j++)
+		{
+			T maxEdgeSpeed;
+			printf("Höhe %f\n", h[j][i-1]);
+
+			//Calling fsolver
+			fsolver(h[i-1][j], hu[i-1][j],
+					h[i][j], hu[i][j],
+					b[i-1][j], b[i][j],
+
+					x_hNetUpdatesLeft[i-1][j-1], x_hNetUpdatesRight[i-1][j-1],
+					x_huNetUpdatesLeft[i-1][j-1], x_huNetUpdatesRight[i-1][j-1],
+					maxEdgeSpeed
+					);
+
+			// Update maxWaveSpeed in x direction
+			if (maxEdgeSpeed > maxWaveSpeed_x)
+				maxWaveSpeed_x = maxEdgeSpeed;
+		}
+	}
+
+
+
+	//Y-Sweep
+	for(unsigned int i=1;i<nx+1;i++)
+	{
+		for(unsigned int j=1;j<ny+2;j++)
+		{
+		T maxEdgeSpeed;
+		//Calling fsolver
+		fsolver(h[i][j-1], hv[i][j-1],
+				h[i][j], hv[i][j],
+				b[i][j-1], b[i][j],
+
+				y_hNetUpdatesTop[i-1][j-1], y_hNetUpdatesBottom[i][j-1],
+				y_hvNetUpdatesTop[i-1][j-1], y_hvNetUpdatesBottom[i][j-1],
+				maxEdgeSpeed
+				);
+
+		// Update maxWaveSpeed in y direction
+		if (maxEdgeSpeed > maxWaveSpeed_y)
+			maxWaveSpeed_y = maxEdgeSpeed;
+		}
+	}
+
+
+	assert(maxWaveSpeed_x!=0);
+	maxTimestep = 0.4f * dx/maxWaveSpeed_x;
+
+
+	#ifndef NDEBUG
+
+	printf("DEBUG Statement! CFL condition is ");
+
+	assert(maxWaveSpeed_y!=0);
+	if(maxTimestep < 0.5f * dy/maxWaveSpeed_y)
+	{
+		printf("satisfied\n");
+	}
+	else
+	{
+		printf("not satisfied! dt >= 0.5f * dy/maxWaveSpeed_y\n");
+	}
+
+	#endif
+}
+
+/**
+ * Updateing height and momentum
+ */
+void SWE_DimensionalSplitting::updateUnknowns(float dt)
+{
+	assert(dx!=0);
+	assert(dt!=0);
+	assert(dy!=0);
+
+
+	for(int i=1;i<nx+1;i++)
+	{
+		for(int j=1;j<ny+1;j++)
+		{
+			h[i][j] = h[i][j] - dt/dx *(x_hNetUpdatesRight[i-1][j-1] + x_hNetUpdatesRight[i][j-1]) + dt/dy * (y_hNetUpdatesTop[i-1][j-1]+y_hNetUpdatesBottom[i-1][j]);
+			hu[i][j] = hu[i][j] - dt/dx * (x_huNetUpdatesRight[i-1][j-1] + x_huNetUpdatesLeft[i][j-1]);
+			hv[i][j] = hv[i][j] - dt/dx * (y_hvNetUpdatesTop[i-1][j-1] + y_hvNetUpdatesBottom[i-1][j]);
+		}
+
+	}
+
+
+}
+
+/**
+ * Delete arrays and variables
+ */
+SWE_DimensionalSplitting::~SWE_DimensionalSplitting() {}
 

@@ -272,4 +272,33 @@ struct SWE_Block1D {
 };
 
 
+class SWE_DimensionalSplitting : public SWE_Block {
+public:
+	SWE_DimensionalSplitting(int l_nx, int l_ny, float l_dx, float l_dy);
+	void computeNumericalFluxes();
+	void updateUnknowns(float dt);
+	virtual ~SWE_DimensionalSplitting();
+
+private:
+	    Float2D x_hNetUpdatesLeft;
+	    Float2D x_hNetUpdatesRight;
+
+	    Float2D x_huNetUpdatesLeft;
+	    Float2D x_huNetUpdatesRight;
+
+	    Float2D y_hNetUpdatesBottom;
+	    Float2D y_hNetUpdatesTop;
+
+	    Float2D y_hvNetUpdatesBottom;
+	    Float2D y_hvNetUpdatesTop;
+
+		float maxWaveSpeed_x;
+		float maxWaveSpeed_y;
+
+};
+
+
+
+
+
 #endif

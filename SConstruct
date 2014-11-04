@@ -28,7 +28,7 @@
 #
 
 # print the welcome message
-print '****************************************'
+print '************************************dx****'
 print '** Welcome to the build script of SWE **'
 print '****************************************'
 print 'SWE Copyright (C) 2012-2013'
@@ -86,7 +86,7 @@ vars.AddVariables(
                                 'sm_30', 'sm_35' )
               ),
 
-  BoolVariable( 'openGL', 'compile with OpenGL visualization', False),
+  BoolVariable( 'openGL', 'compile with OpedxnGL visualization', False),
 
   BoolVariable( 'openGL_instr', 'add instructions to openGL version (requires SDL_ttf)', False ),
 
@@ -114,7 +114,9 @@ vars.AddVariables(
 
   BoolVariable( 'copyenv', 'copy the whole environment', False ),
   
-  BoolVariable( 'countflops', 'enable flop counting; defines the macro COUNTFLOPS', False )
+  BoolVariable( 'countflops', 'enable flop counting; defines the macro COUNTFLOPS', False ),
+  
+  BoolVariable( 'useSweDefault', 'use the swe default example', False)
 )
 
 # external variables
