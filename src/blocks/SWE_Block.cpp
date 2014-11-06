@@ -29,7 +29,7 @@
 #include "SWE_Block.hh"
 #include "tools/help.hh"
 
-#include "solvers_2/fsolver.cpp"
+#include "solvers/fsolver.cpp"
 
 #include <cmath>
 #include <iostream>
@@ -765,19 +765,16 @@ void SWE_Block::synchCopyLayerBeforeRead() {}
  */
 SWE_DimensionalSplitting::SWE_DimensionalSplitting(int l_nx, int l_ny, float l_dx, float l_dy) :
 	SWE_Block (l_nx, l_ny, l_dx, l_dy),
-		x_hNetUpdatesLeft (nx + 1, ny),
-		x_hNetUpdatesRight (nx + 1, ny),
-		x_huNetUpdatesLeft (nx + 1, ny),
-		x_huNetUpdatesRight (nx + 1, ny),
+		hNetUpdateLeft (nx + 1, ny),
+		hNetUpdateRight (nx + 1, ny),
+		huNetUpdateLeft (nx + 1, ny),
+		huNetUpdateRight (nx + 1,  ny),
 
-		y_hNetUpdatesBottom (nx, ny + 1),
-		y_hNetUpdatesTop (nx, ny + 1),
-		y_hvNetUpdatesBottom (nx, ny + 1),
-		y_hvNetUpdatesTop (nx, ny + 1)
-{
-	maxWaveSpeed_x=0.0f;
-	maxWaveSpeed_y=0.0f;
-}
+		hNetUpdateLower (nx, ny + 1),
+		hNetUpdateUpper (nx, ny + 1),
+		hvNetUpdateLower (nx, ny + 1),
+		hvNetUpdateUpper (nx, ny + 1)
+{}
 
 
 
@@ -786,26 +783,27 @@ SWE_DimensionalSplitting::SWE_DimensionalSplitting(int l_nx, int l_ny, float l_d
  */
 void SWE_DimensionalSplitting::computeNumericalFluxes()
 {
+	//h[x][y]
 
-	//x-Sweep
-	for(unsigned int i=1;i<nx+2;i++)
+	T maxWaveSpeed_x = 0.0f;
+	T maxWaveSpeed_y = 0.0f;
+
+	for(int x = 1; x < nx+2 ; x++)
 	{
-		for(unsigned int j=1;i<ny+1;j++)
-		{
-			T maxEdgeSpeed;
-			printf("Höhe %f\n", h[j][i-1]);
+		for (int y = 1; y < ny + 1; y++) {
+			T maxEdgeSpeed=0;
 
-			//Calling fsolver
-			fsolver(h[i-1][j], hu[i-1][j],
-					h[i][j], hu[i][j],
-					b[i-1][j], b[i][j],
-
-					x_hNetUpdatesLeft[i-1][j-1], x_hNetUpdatesRight[i-1][j-1],
-					x_huNetUpdatesLeft[i-1][j-1], x_huNetUpdatesRight[i-1][j-1],
+			fsolver(h[x-1][y], hu[x-1][y],
+					h[x][y], hu[x][y],
+					b[x-1][y], b[x][y],
+					hNetUpdateLeft[x-1][y-1],
+					hNetUpdateRight[x-1][y-1],
+					huNetUpdateLeft[x-1][y-1],
+					huNetUpdateRight[x-1][y-1],
 					maxEdgeSpeed
 					);
 
-			// Update maxWaveSpeed in x direction
+			// Update maxWaveSpeed
 			if (maxEdgeSpeed > maxWaveSpeed_x)
 				maxWaveSpeed_x = maxEdgeSpeed;
 		}
@@ -813,30 +811,32 @@ void SWE_DimensionalSplitting::computeNumericalFluxes()
 
 
 
-	//Y-Sweep
-	for(unsigned int i=1;i<nx+1;i++)
+
+	//ysweep
+	for(int x = 1; x < nx+1 ; x++)
 	{
-		for(unsigned int j=1;j<ny+2;j++)
-		{
-		T maxEdgeSpeed;
-		//Calling fsolver
-		fsolver(h[i][j-1], hv[i][j-1],
-				h[i][j], hv[i][j],
-				b[i][j-1], b[i][j],
+		for (int y = 1; y < ny + 2; y++) {
+			T maxEdgeSpeed=0;
 
-				y_hNetUpdatesTop[i-1][j-1], y_hNetUpdatesBottom[i][j-1],
-				y_hvNetUpdatesTop[i-1][j-1], y_hvNetUpdatesBottom[i][j-1],
-				maxEdgeSpeed
-				);
+			fsolver(h[x][y-1], hv[x][y-1],
+					h[x][y], hv[x][y],
+					b[x][y-1], b[x][y],
+					hNetUpdateLower[x-1][y-1],
+					hNetUpdateUpper[x-1][y-1],
+					hvNetUpdateLower[x-1][y-1],
+					hvNetUpdateUpper[x-1][y-1],
+					maxEdgeSpeed
+					);
 
-		// Update maxWaveSpeed in y direction
-		if (maxEdgeSpeed > maxWaveSpeed_y)
-			maxWaveSpeed_y = maxEdgeSpeed;
+			// Update maxWaveSpeed
+			if (maxEdgeSpeed > maxWaveSpeed_y)
+				maxWaveSpeed_y = maxEdgeSpeed;
 		}
 	}
 
 
-	assert(maxWaveSpeed_x!=0);
+
+	// Compute CFL condition
 	maxTimestep = 0.4f * dx/maxWaveSpeed_x;
 
 
@@ -855,6 +855,8 @@ void SWE_DimensionalSplitting::computeNumericalFluxes()
 	}
 
 	#endif
+
+
 }
 
 /**
@@ -862,18 +864,17 @@ void SWE_DimensionalSplitting::computeNumericalFluxes()
  */
 void SWE_DimensionalSplitting::updateUnknowns(float dt)
 {
-	assert(dx!=0);
-	assert(dt!=0);
-	assert(dy!=0);
-
-
-	for(int i=1;i<nx+1;i++)
+	for(int x=1;x<nx+1;x++)
 	{
-		for(int j=1;j<ny+1;j++)
+		for(int y=1;y<ny+1;y++)
 		{
-			h[i][j] = h[i][j] - dt/dx *(x_hNetUpdatesRight[i-1][j-1] + x_hNetUpdatesRight[i][j-1]) + dt/dy * (y_hNetUpdatesTop[i-1][j-1]+y_hNetUpdatesBottom[i-1][j]);
-			hu[i][j] = hu[i][j] - dt/dx * (x_huNetUpdatesRight[i-1][j-1] + x_huNetUpdatesLeft[i][j-1]);
-			hv[i][j] = hv[i][j] - dt/dx * (y_hvNetUpdatesTop[i-1][j-1] + y_hvNetUpdatesBottom[i-1][j]);
+			h[x][y] = h[x][y]	-(dt/dx*(hNetUpdateRight[x-1][y] + hNetUpdateLeft[x][y-1])
+								+ dt/dy*(hNetUpdateUpper[x-1][y-1] + hNetUpdateLower[x-1][y]));
+
+			hu[x][y] = hu[x][y] - dt/dx * (huNetUpdateRight[x-1][y-1] + huNetUpdateLeft[x][y-1]);
+
+			hv[x][y] = hv[x][y] - dt/dy * (hvNetUpdateUpper[x-1][y-1] + hvNetUpdateLower[x-1][y]);
+
 		}
 
 	}
