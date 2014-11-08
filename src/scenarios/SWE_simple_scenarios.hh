@@ -42,14 +42,24 @@ class SWE_RadialDamBreakScenario : public SWE_Scenario {
   public:
 
     float getBathymetry(float x, float y) {
-       return 0.f;
+    	float a = 5.0f;
+    	float b = 10.0f;
+    	float x0 = 700.0f;
+    	float y0 = 650.0;
+    	float r = 250.0f;
+
+    	if(((x-x0)*(x-x0))/(a*a)+((y-y0)*(y-y0))/(b*b)<r)
+    	{
+    		return 5.0f;
+    	}
+    	return -5.0f;
     };
 
     float getWaterHeight(float x, float y) { 
        return ( sqrt( (x-500.f)*(x-500.f) + (y-500.f)*(y-500.f) ) < 100.f ) ? 15.f: 10.0f;
     };
 
-	virtual float endSimulation() { return (float) 15; };
+	virtual float endSimulation() { return (float) 200; };
 
     virtual BoundaryType getBoundaryType(BoundaryEdge edge) { return OUTFLOW; };
 

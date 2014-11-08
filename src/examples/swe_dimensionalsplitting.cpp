@@ -109,11 +109,14 @@ int main( int argc, char** argv ) {
                                 (float) 28800., simulationArea);
   #else
   // create a simple artificial scenario
+  //SWE_RadialDamBreakScenario l_scenario;
   SWE_RadialDamBreakScenario l_scenario;
   #endif
 
+
+
   //! number of checkpoints for visualization (at each checkpoint in time, an output file is written).
-  int l_numberOfCheckPoints = 200;
+  int l_numberOfCheckPoints = 400;
 
   //! size of a single cell in x- and y-direction
   float l_dX, l_dY;
@@ -137,12 +140,14 @@ int main( int argc, char** argv ) {
   l_originX = l_scenario.getBoundaryPos(BND_LEFT);
   l_originY = l_scenario.getBoundaryPos(BND_BOTTOM);
 
+
   // initialize the wave propagation block
   l_wavePropgationBlock.initScenario(l_originX, l_originY, l_scenario);
 
 
   //! time when the simulation ends.
   float l_endSimulation = l_scenario.endSimulation();
+
 
   //! checkpoints when output files are written.
   float* l_checkPoints = new float[l_numberOfCheckPoints+1];
@@ -195,7 +200,8 @@ int main( int argc, char** argv ) {
 
   //! simulation time.
   float l_t = 0.0;
-  progressBar.update(l_t);
+
+  //progressBar.update(l_t);
 
   unsigned int l_iterations = 0;
 
@@ -218,15 +224,16 @@ int main( int argc, char** argv ) {
       // compute numerical flux on each edge
       l_wavePropgationBlock.computeNumericalFluxes();
 
+
       //! maximum allowed time step width.
       float l_maxTimeStepWidth = l_wavePropgationBlock.getMaxTimestep();
-
 
       // update the cell values
       l_wavePropgationBlock.updateUnknowns(l_maxTimeStepWidth);
 
       // update the cpu time in the logger
       tools::Logger::logger.updateTime("Cpu");
+
 
       // update simulation time with time step width.
       l_t += l_maxTimeStepWidth;
@@ -243,14 +250,17 @@ int main( int argc, char** argv ) {
     tools::Logger::logger.printOutputTime(l_t);
     progressBar.update(l_t);
 
+
     // write output
     l_writer.writeTimeStep( l_wavePropgationBlock.getWaterHeight(),
                             l_wavePropgationBlock.getDischarge_hu(),
                             l_wavePropgationBlock.getDischarge_hv(),
                             l_t);
+
   }
 
-  /**
+
+ /**
    * Finalize.
    */
   // write the statistics message

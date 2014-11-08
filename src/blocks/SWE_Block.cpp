@@ -875,6 +875,15 @@ void SWE_DimensionalSplitting::updateUnknowns(float dt)
 
 			hv[x][y] = hv[x][y] - dt/dy * (hvNetUpdateUpper[x-1][y-1] + hvNetUpdateLower[x-1][y]);
 
+
+			if(b[x][y] > 0.0f)
+			{
+				//There is no water in this cell
+				h[x][y] = 0.0f;
+				hu[x][y] = 0.0f;
+				hv[x][y] = 0.0f;
+			}
+
 		}
 
 	}
