@@ -434,6 +434,7 @@
 \indexentry{src/blocks/\-S\-W\-E\-\_\-\-Wave\-Propagation\-Block.\-hh@{src/blocks/\-S\-W\-E\-\_\-\-Wave\-Propagation\-Block.\-hh}}{88}
 \indexentry{src/blocks/\-S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-S\-I\-M\-D.\-cpp@{src/blocks/\-S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-S\-I\-M\-D.\-cpp}}{88}
 \indexentry{src/blocks/\-S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-S\-I\-M\-D.\-hh@{src/blocks/\-S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-S\-I\-M\-D.\-hh}}{89}
+\indexentry{src/examples/dim\-\_\-split\-\_\-test.\-h@{src/examples/dim\-\_\-split\-\_\-test.\-h}}{90}
 \indexentry{src/examples/swe\-\_\-mpi.\-cpp@{src/examples/swe\-\_\-mpi.\-cpp}}{90}
 \indexentry{swe\-\_\-mpi.\-cpp@{swe\-\_\-mpi.\-cpp}!compute\-Number\-Of\-Block\-Rows@{compute\-Number\-Of\-Block\-Rows}}{91}
 \indexentry{compute\-Number\-Of\-Block\-Rows@{compute\-Number\-Of\-Block\-Rows}!swe_mpi.cpp@{swe\-\_\-mpi.\-cpp}}{91}
@@ -444,12 +445,12 @@
 \indexentry{swe\-\_\-mpi.\-cpp@{swe\-\_\-mpi.\-cpp}!main@{main}}{92}
 \indexentry{main@{main}!swe_mpi.cpp@{swe\-\_\-mpi.\-cpp}}{92}
 \indexentry{src/examples/swe\-\_\-simple.\-cpp@{src/examples/swe\-\_\-simple.\-cpp}}{93}
-\indexentry{swe\-\_\-simple.\-cpp@{swe\-\_\-simple.\-cpp}!main@{main}}{93}
-\indexentry{main@{main}!swe_simple.cpp@{swe\-\_\-simple.\-cpp}}{93}
+\indexentry{swe\-\_\-simple.\-cpp@{swe\-\_\-simple.\-cpp}!main@{main}}{94}
+\indexentry{main@{main}!swe_simple.cpp@{swe\-\_\-simple.\-cpp}}{94}
 \indexentry{src/opengl/vbo.\-cpp@{src/opengl/vbo.\-cpp}}{94}
-\indexentry{src/opengl/vbo.\-h@{src/opengl/vbo.\-h}}{94}
+\indexentry{src/opengl/vbo.\-h@{src/opengl/vbo.\-h}}{95}
 \indexentry{src/scenarios/\-S\-W\-E\-\_\-\-Asagi\-Scenario.\-cpp@{src/scenarios/\-S\-W\-E\-\_\-\-Asagi\-Scenario.\-cpp}}{95}
-\indexentry{src/scenarios/\-S\-W\-E\-\_\-\-Asagi\-Scenario.\-hh@{src/scenarios/\-S\-W\-E\-\_\-\-Asagi\-Scenario.\-hh}}{95}
+\indexentry{src/scenarios/\-S\-W\-E\-\_\-\-Asagi\-Scenario.\-hh@{src/scenarios/\-S\-W\-E\-\_\-\-Asagi\-Scenario.\-hh}}{96}
 \indexentry{src/scenarios/\-S\-W\-E\-\_\-\-Asagi\-Scenario\-\_\-vis.\-hh@{src/scenarios/\-S\-W\-E\-\_\-\-Asagi\-Scenario\-\_\-vis.\-hh}}{96}
 \indexentry{src/scenarios/\-S\-W\-E\-\_\-\-Scenario.\-hh@{src/scenarios/\-S\-W\-E\-\_\-\-Scenario.\-hh}}{97}
 \indexentry{S\-W\-E\-\_\-\-Scenario.\-hh@{S\-W\-E\-\_\-\-Scenario.\-hh}!Boundary\-Edge@{Boundary\-Edge}}{98}

@@ -219,7 +219,7 @@
 
   \item {main}
     \subitem {swe\-\_\-mpi.\-cpp}, 90
-    \subitem {swe\-\_\-simple.\-cpp}, 91
+    \subitem {swe\-\_\-simple.\-cpp}, 92
   \item {max\-Timestep}
     \subitem {S\-W\-E\-\_\-\-Block}, 48
 
@@ -512,12 +512,13 @@
 		81
   \item {src/blocks/rusanov/\-S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A\-\_\-kernels.\-hh}, 
 		81
+  \item {src/examples/dim\-\_\-split\-\_\-test.\-h}, 88
   \item {src/examples/swe\-\_\-mpi.\-cpp}, 88
   \item {src/examples/swe\-\_\-simple.\-cpp}, 91
   \item {src/opengl/vbo.\-cpp}, 92
-  \item {src/opengl/vbo.\-h}, 92
+  \item {src/opengl/vbo.\-h}, 93
   \item {src/scenarios/\-S\-W\-E\-\_\-\-Asagi\-Scenario.\-cpp}, 93
-  \item {src/scenarios/\-S\-W\-E\-\_\-\-Asagi\-Scenario.\-hh}, 93
+  \item {src/scenarios/\-S\-W\-E\-\_\-\-Asagi\-Scenario.\-hh}, 94
   \item {src/scenarios/\-S\-W\-E\-\_\-\-Asagi\-Scenario\-\_\-vis.\-hh}, 
 		94
   \item {src/scenarios/\-S\-W\-E\-\_\-\-Scenario.\-hh}, 95
@@ -541,7 +542,7 @@
     \subitem {exchange\-Left\-Right\-Ghost\-Layers}, 90
     \subitem {main}, 90
   \item {swe\-\_\-simple.\-cpp}
-    \subitem {main}, 91
+    \subitem {main}, 92
   \item {synch\-After\-Write}
     \subitem {S\-W\-E\-\_\-\-Block}, 46
     \subitem {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A}, 50
