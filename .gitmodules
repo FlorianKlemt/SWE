@@ -1,3 +1,9 @@
 [submodule "submodules/swe_solvers"]
 	path = submodules/swe_solvers
 	url = https://github.com/TUM-I5/swe_solvers.git
+[submodule "solvers"]
+	path = solvers
+	url = git://github.com/m1ch11990/fsolver
+[submodule "src/solvers"]
+	path = src/solvers
+	url = git://github.com/m1ch11990/fsolver

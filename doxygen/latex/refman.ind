@@ -1,0 +1,685 @@
+\begin{theindex}
+
+  \item {$\sim$\-Logger}
+    \subitem {tools\-::\-Logger}, 25
+  \item {$\sim$\-Net\-Cdf\-Writer}
+    \subitem {io\-::\-Net\-Cdf\-Writer}, 30
+  \item {$\sim$\-S\-W\-E\-\_\-\-Block}
+    \subitem {S\-W\-E\-\_\-\-Block}, 41
+  \item {$\sim$\-S\-W\-E\-\_\-\-Dimensional\-Splitting}
+    \subitem {S\-W\-E\-\_\-\-Dimensional\-Splitting}, 52
+  \item {$\sim$\-S\-W\-E\-\_\-\-Rusanov\-Block}
+    \subitem {S\-W\-E\-\_\-\-Rusanov\-Block}, 55
+  \item {$\sim$\-S\-W\-E\-\_\-\-Vis\-Info}
+    \subitem {S\-W\-E\-\_\-\-Vis\-Info}, 61
+  \item {$\sim$\-S\-W\-E\-\_\-\-Wave\-Propagation\-Block}
+    \subitem {S\-W\-E\-\_\-\-Wave\-Propagation\-Block}, 64
+  \item {$\sim$\-S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-S\-I\-M\-D}
+    \subitem {S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-S\-I\-M\-D}, 68
+  \item {$\sim$\-Shader}
+    \subitem {Shader}, 32
+  \item {$\sim$\-Visualization}
+    \subitem {Visualization}, 70
+
+  \indexspace
+
+  \item {bathy\-Vertical\-Offset}
+    \subitem {S\-W\-E\-\_\-\-Bathymetry\-Dam\-Break\-Vis\-Info}, 38
+    \subitem {S\-W\-E\-\_\-\-Vis\-Info}, 61
+  \item {bathy\-Vertical\-Scaling}
+    \subitem {S\-W\-E\-\_\-\-Asagi\-Japan\-Small\-Vis\-Info}, 33
+    \subitem {S\-W\-E\-\_\-\-Vis\-Info}, 61
+  \item {Boundary\-Edge}
+    \subitem {S\-W\-E\-\_\-\-Scenario.\-hh}, 96
+  \item {boundary\-Size}
+    \subitem {io\-::\-Boundary\-Size}, 18
+  \item {Boundary\-Type}
+    \subitem {S\-W\-E\-\_\-\-Scenario.\-hh}, 96
+
+  \indexspace
+
+  \item {Camera}, 18
+    \subitem {Camera}, 19
+    \subitem {display\-Image}, 19
+    \subitem {orient}, 19
+    \subitem {panning}, 19
+    \subitem {set\-Camera}, 19
+    \subitem {start\-Panning}, 19
+    \subitem {view\-Distance}, 19
+    \subitem {zoom\-In}, 19
+    \subitem {zoom\-Out}, 19
+  \item {clean\-Up}
+    \subitem {Visualization}, 71
+  \item {compute\-Bathymetry\-Sources}
+    \subitem {S\-W\-E\-\_\-\-Rusanov\-Block}, 55
+  \item {compute\-Flux}
+    \subitem {S\-W\-E\-\_\-\-Rusanov\-Block}, 55
+  \item {compute\-Local\-S\-V}
+    \subitem {S\-W\-E\-\_\-\-Rusanov\-Block}, 55
+  \item {compute\-Max\-Timestep}
+    \subitem {S\-W\-E\-\_\-\-Block}, 42
+  \item {compute\-Number\-Of\-Block\-Rows}
+    \subitem {swe\-\_\-mpi.\-cpp}, 89
+  \item {compute\-Numerical\-Fluxes}
+    \subitem {S\-W\-E\-\_\-\-Block}, 43
+    \subitem {S\-W\-E\-\_\-\-Dimensional\-Splitting}, 52
+    \subitem {S\-W\-E\-\_\-\-Rusanov\-Block}, 55
+    \subitem {S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A}, 57
+    \subitem {S\-W\-E\-\_\-\-Wave\-Accumulation\-Block}, 63
+    \subitem {S\-W\-E\-\_\-\-Wave\-Propagation\-Block}, 64
+    \subitem {S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda}, 65
+    \subitem {S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-S\-I\-M\-D}, 68
+  \item {Controller}, 20
+    \subitem {Controller}, 20
+    \subitem {handle\-Events}, 20
+    \subitem {has\-Focus}, 20
+    \subitem {is\-Paused}, 20
+  \item {cout}
+    \subitem {tools\-::\-Logger}, 25
+
+  \indexspace
+
+  \item {disable\-Shader}
+    \subitem {Shader}, 32
+  \item {display\-Image}
+    \subitem {Camera}, 19
+  \item {dynamic\-Displacement\-Available}
+    \subitem {S\-W\-E\-\_\-\-Asagi\-Scenario}, 34
+
+  \indexspace
+
+  \item {enable\-Shader}
+    \subitem {Shader}, 32
+  \item {end\-Simulation}
+    \subitem {S\-W\-E\-\_\-\-Asagi\-Scenario}, 35
+  \item {exchange\-Bottom\-Top\-Ghost\-Layers}
+    \subitem {swe\-\_\-mpi.\-cpp}, 89
+  \item {exchange\-Left\-Right\-Ghost\-Layers}
+    \subitem {swe\-\_\-mpi.\-cpp}, 90
+
+  \indexspace
+
+  \item {finalize}
+    \subitem {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A}, 49
+  \item {finialize}
+    \subitem {V\-B\-O}, 69
+  \item {Float1\-D}, 20
+  \item {Float2\-D}, 21
+    \subitem {Float2\-D}, 21, 22
+    \subitem {Float2\-D}, 21, 22
+  \item {fsolver\-\_\-test}, 22
+    \subitem {test\-Fsolver\-\_\-\-Netupdate\-Left}, 23
+    \subitem {test\-Fsolver\-\_\-eigenvalue}, 23
+    \subitem {test\-Fsolver\-\_\-overload\-Function}, 23
+    \subitem {test\-Fsolver\-\_\-same\-Input}, 23
+    \subitem {test\-Fsolver\-\_\-supersonicproblem}, 23
+
+  \indexspace
+
+  \item {generate\-Base\-File\-Name}
+    \subitem {help.\-hh}, 99
+  \item {generate\-Container\-File\-Name}
+    \subitem {help.\-hh}, 100
+  \item {generate\-File\-Name}
+    \subitem {help.\-hh}, 100
+  \item {get\-Bathy\-Coord}
+    \subitem {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A.\-hh}, 76
+  \item {get\-Bathymetry}
+    \subitem {S\-W\-E\-\_\-\-Asagi\-Scenario}, 35
+    \subitem {S\-W\-E\-\_\-\-Block}, 43
+  \item {get\-Bathymetry\-And\-Dynamic\-Displacement}
+    \subitem {S\-W\-E\-\_\-\-Asagi\-Scenario}, 35
+  \item {get\-Boundary\-Pos}
+    \subitem {S\-W\-E\-\_\-\-Asagi\-Scenario}, 35
+    \subitem {S\-W\-E\-\_\-\-Bathymetry\-Dam\-Break\-Scenario}, 37
+    \subitem {S\-W\-E\-\_\-\-Radial\-Dam\-Break\-Scenario}, 53
+    \subitem {S\-W\-E\-\_\-\-Splashing\-Pool\-Scenario}, 60
+  \item {get\-Boundary\-Type}
+    \subitem {S\-W\-E\-\_\-\-Asagi\-Scenario}, 36
+  \item {get\-C\-U\-D\-A\-\_\-bathymetry}
+    \subitem {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A}, 49
+  \item {get\-C\-U\-D\-A\-\_\-water\-Height}
+    \subitem {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A}, 50
+  \item {get\-Cell\-Coord}
+    \subitem {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A.\-hh}, 76
+  \item {get\-Cuda\-Normals\-Ptr}
+    \subitem {Visualization}, 71
+  \item {get\-Cuda\-Water\-Surface\-Ptr}
+    \subitem {Visualization}, 71
+  \item {get\-Discharge\-\_\-hu}
+    \subitem {S\-W\-E\-\_\-\-Block}, 43
+  \item {get\-Discharge\-\_\-hv}
+    \subitem {S\-W\-E\-\_\-\-Block}, 43
+  \item {get\-Edge\-Coord}
+    \subitem {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A.\-hh}, 76
+  \item {get\-Max\-Timestep}
+    \subitem {S\-W\-E\-\_\-\-Block}, 43
+  \item {get\-Name}
+    \subitem {V\-B\-O}, 69
+  \item {get\-Time}
+    \subitem {tools\-::\-Logger}, 25
+  \item {get\-Uniform\-Location}
+    \subitem {Shader}, 32
+  \item {get\-Water\-Height}
+    \subitem {S\-W\-E\-\_\-\-Asagi\-Scenario}, 36
+    \subitem {S\-W\-E\-\_\-\-Bathymetry\-Dam\-Break\-Scenario}, 37
+    \subitem {S\-W\-E\-\_\-\-Block}, 43
+  \item {grab\-Ghost\-Layer}
+    \subitem {S\-W\-E\-\_\-\-Block}, 43
+    \subitem {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A}, 50
+
+  \indexspace
+
+  \item {handle\-Events}
+    \subitem {Controller}, 20
+  \item {has\-Focus}
+    \subitem {Controller}, 20
+  \item {Help}
+    \subitem {tools\-::\-Args}, 17
+  \item {help.\-hh}
+    \subitem {generate\-Base\-File\-Name}, 99
+    \subitem {generate\-Container\-File\-Name}, 100
+    \subitem {generate\-File\-Name}, 100
+
+  \indexspace
+
+  \item {init}
+    \subitem {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A}, 50
+    \subitem {V\-B\-O}, 70
+    \subitem {Visualization}, 71
+  \item {init\-Scenario}
+    \subitem {S\-W\-E\-\_\-\-Block}, 44
+  \item {init\-Wall\-Clock\-Time}
+    \subitem {tools\-::\-Logger}, 25
+  \item {io\-::\-Boundary\-Size}, 18
+    \subitem {boundary\-Size}, 18
+  \item {io\-::\-Net\-Cdf\-Writer}, 30
+    \subitem {$\sim$\-Net\-Cdf\-Writer}, 30
+    \subitem {Net\-Cdf\-Writer}, 30
+    \subitem {write\-Time\-Step}, 30
+  \item {io\-::\-Vtk\-Writer}, 72
+    \subitem {Vtk\-Writer}, 72
+    \subitem {write\-Time\-Step}, 73
+  \item {io\-::\-Writer}, 73
+    \subitem {write\-Time\-Step}, 74
+    \subitem {Writer}, 74
+  \item {is\-Extension\-Supported}
+    \subitem {Visualization}, 71
+  \item {is\-Paused}
+    \subitem {Controller}, 20
+
+  \indexspace
+
+  \item {Logger}
+    \subitem {tools\-::\-Logger}, 24
+  \item {logger}
+    \subitem {tools\-::\-Logger}, 29
+
+  \indexspace
+
+  \item {main}
+    \subitem {swe\-\_\-mpi.\-cpp}, 90
+    \subitem {swe\-\_\-simple.\-cpp}, 91
+  \item {max\-Timestep}
+    \subitem {S\-W\-E\-\_\-\-Block}, 48
+
+  \indexspace
+
+  \item {Net\-Cdf\-Writer}
+    \subitem {io\-::\-Net\-Cdf\-Writer}, 30
+
+  \indexspace
+
+  \item {operator$<$$<$}
+    \subitem {S\-W\-E\-\_\-\-Rusanov\-Block}, 56
+    \subitem {S\-W\-E\-\_\-\-Rusanov\-Block.\-cpp}, 79
+    \subitem {S\-W\-E\-\_\-\-Rusanov\-Block.\-hh}, 80
+  \item {orient}
+    \subitem {Camera}, 19
+
+  \indexspace
+
+  \item {panning}
+    \subitem {Camera}, 19
+  \item {parse}
+    \subitem {tools\-::\-Args}, 18
+  \item {print\-Cell\-Size}
+    \subitem {tools\-::\-Logger}, 25
+  \item {print\-Element\-Updates\-Done}
+    \subitem {tools\-::\-Logger}, 26
+  \item {print\-Finish\-Message}
+    \subitem {tools\-::\-Logger}, 26
+  \item {print\-Iterations\-Done}
+    \subitem {tools\-::\-Logger}, 26
+  \item {print\-Number\-Of\-Blocks}
+    \subitem {tools\-::\-Logger}, 26
+  \item {print\-Number\-Of\-Cells}
+    \subitem {tools\-::\-Logger}, 26
+  \item {print\-Number\-Of\-Cells\-Per\-Process}
+    \subitem {tools\-::\-Logger}, 27
+  \item {print\-Number\-Of\-Processes}
+    \subitem {tools\-::\-Logger}, 27
+  \item {print\-Output\-File\-Creation}
+    \subitem {tools\-::\-Logger}, 27
+  \item {print\-Output\-Time}
+    \subitem {tools\-::\-Logger}, 27
+  \item {print\-Simulation\-Time}
+    \subitem {tools\-::\-Logger}, 27
+  \item {print\-Solver\-Statistics}
+    \subitem {tools\-::\-Logger}, 28
+  \item {print\-Start\-Message}
+    \subitem {tools\-::\-Logger}, 28
+  \item {print\-Statistics\-Message}
+    \subitem {tools\-::\-Logger}, 28
+  \item {print\-String}
+    \subitem {tools\-::\-Logger}, 28
+  \item {print\-Time}
+    \subitem {tools\-::\-Logger}, 28
+  \item {print\-Wall\-Clock\-Time}
+    \subitem {tools\-::\-Logger}, 29
+  \item {print\-Welcome\-Message}
+    \subitem {tools\-::\-Logger}, 29
+
+  \indexspace
+
+  \item {register\-Copy\-Layer}
+    \subitem {S\-W\-E\-\_\-\-Block}, 44
+    \subitem {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A}, 50
+  \item {render\-Display}
+    \subitem {Visualization}, 71
+  \item {reset\-Clock\-To\-Current\-Time}
+    \subitem {tools\-::\-Logger}, 29
+  \item {resize\-Window}
+    \subitem {Visualization}, 71
+  \item {Result}
+    \subitem {tools\-::\-Args}, 17
+
+  \indexspace
+
+  \item {S\-W\-E\-\_\-\-Asagi\-Grid}, 33
+  \item {S\-W\-E\-\_\-\-Asagi\-Japan\-Small\-Vis\-Info}, 33
+    \subitem {bathy\-Vertical\-Scaling}, 33
+    \subitem {water\-Vertical\-Scaling}, 33
+  \item {S\-W\-E\-\_\-\-Asagi\-Scenario}, 34
+    \subitem {dynamic\-Displacement\-Available}, 34
+    \subitem {end\-Simulation}, 35
+    \subitem {get\-Bathymetry}, 35
+    \subitem {get\-Bathymetry\-And\-Dynamic\-Displacement}, 35
+    \subitem {get\-Boundary\-Pos}, 35
+    \subitem {get\-Boundary\-Type}, 36
+    \subitem {get\-Water\-Height}, 36
+    \subitem {S\-W\-E\-\_\-\-Asagi\-Scenario}, 34
+    \subitem {S\-W\-E\-\_\-\-Asagi\-Scenario}, 34
+  \item {S\-W\-E\-\_\-\-Bathymetry\-Dam\-Break\-Scenario}, 36
+    \subitem {get\-Boundary\-Pos}, 37
+    \subitem {get\-Water\-Height}, 37
+  \item {S\-W\-E\-\_\-\-Bathymetry\-Dam\-Break\-Vis\-Info}, 37
+    \subitem {bathy\-Vertical\-Offset}, 38
+  \item {S\-W\-E\-\_\-\-Block}, 38
+    \subitem {$\sim$\-S\-W\-E\-\_\-\-Block}, 41
+    \subitem {compute\-Max\-Timestep}, 42
+    \subitem {compute\-Numerical\-Fluxes}, 43
+    \subitem {get\-Bathymetry}, 43
+    \subitem {get\-Discharge\-\_\-hu}, 43
+    \subitem {get\-Discharge\-\_\-hv}, 43
+    \subitem {get\-Max\-Timestep}, 43
+    \subitem {get\-Water\-Height}, 43
+    \subitem {grab\-Ghost\-Layer}, 43
+    \subitem {init\-Scenario}, 44
+    \subitem {max\-Timestep}, 48
+    \subitem {register\-Copy\-Layer}, 44
+    \subitem {S\-W\-E\-\_\-\-Block}, 41
+    \subitem {set\-Bathymetry}, 44
+    \subitem {set\-Boundary\-Bathymetry}, 44
+    \subitem {set\-Boundary\-Conditions}, 45
+    \subitem {set\-Boundary\-Type}, 45
+    \subitem {set\-Discharge}, 45
+    \subitem {set\-Ghost\-Layer}, 45
+    \subitem {set\-Water\-Height}, 45
+    \subitem {simulate}, 45
+    \subitem {simulate\-Timestep}, 46
+    \subitem {S\-W\-E\-\_\-\-Block}, 41
+    \subitem {synch\-After\-Write}, 46
+    \subitem {synch\-Bathymetry\-After\-Write}, 46
+    \subitem {synch\-Bathymetry\-Before\-Read}, 46
+    \subitem {synch\-Before\-Read}, 46
+    \subitem {synch\-Copy\-Layer\-Before\-Read}, 46
+    \subitem {synch\-Discharge\-After\-Write}, 47
+    \subitem {synch\-Discharge\-Before\-Read}, 47
+    \subitem {synch\-Ghost\-Layer\-After\-Write}, 47
+    \subitem {synch\-Water\-Height\-After\-Write}, 47
+    \subitem {synch\-Water\-Height\-Before\-Read}, 47
+    \subitem {update\-Unknowns}, 47
+  \item {S\-W\-E\-\_\-\-Block1\-D}, 48
+  \item {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A}, 48
+    \subitem {finalize}, 49
+    \subitem {get\-C\-U\-D\-A\-\_\-bathymetry}, 49
+    \subitem {get\-C\-U\-D\-A\-\_\-water\-Height}, 50
+    \subitem {grab\-Ghost\-Layer}, 50
+    \subitem {init}, 50
+    \subitem {register\-Copy\-Layer}, 50
+    \subitem {set\-Boundary\-Conditions}, 50
+    \subitem {synch\-After\-Write}, 50
+    \subitem {synch\-Bathymetry\-After\-Write}, 51
+    \subitem {synch\-Bathymetry\-Before\-Read}, 51
+    \subitem {synch\-Before\-Read}, 51
+    \subitem {synch\-Copy\-Layer\-Before\-Read}, 51
+    \subitem {synch\-Discharge\-After\-Write}, 51
+    \subitem {synch\-Discharge\-Before\-Read}, 51
+    \subitem {synch\-Ghost\-Layer\-After\-Write}, 51
+    \subitem {synch\-Water\-Height\-After\-Write}, 51
+    \subitem {synch\-Water\-Height\-Before\-Read}, 52
+  \item {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A.\-hh}
+    \subitem {get\-Bathy\-Coord}, 76
+    \subitem {get\-Cell\-Coord}, 76
+    \subitem {get\-Edge\-Coord}, 76
+  \item {S\-W\-E\-\_\-\-Dimensional\-Splitting}, 52
+    \subitem {$\sim$\-S\-W\-E\-\_\-\-Dimensional\-Splitting}, 52
+    \subitem {compute\-Numerical\-Fluxes}, 52
+    \subitem {S\-W\-E\-\_\-\-Dimensional\-Splitting}, 52
+    \subitem {S\-W\-E\-\_\-\-Dimensional\-Splitting}, 52
+    \subitem {update\-Unknowns}, 52
+  \item {S\-W\-E\-\_\-\-Radial\-Dam\-Break\-Scenario}, 53
+    \subitem {get\-Boundary\-Pos}, 53
+  \item {S\-W\-E\-\_\-\-Rusanov\-Block}, 54
+    \subitem {$\sim$\-S\-W\-E\-\_\-\-Rusanov\-Block}, 55
+    \subitem {compute\-Bathymetry\-Sources}, 55
+    \subitem {compute\-Flux}, 55
+    \subitem {compute\-Local\-S\-V}, 55
+    \subitem {compute\-Numerical\-Fluxes}, 55
+    \subitem {operator$<$$<$}, 56
+    \subitem {S\-W\-E\-\_\-\-Rusanov\-Block}, 55
+    \subitem {simulate}, 55
+    \subitem {simulate\-Timestep}, 56
+    \subitem {S\-W\-E\-\_\-\-Rusanov\-Block}, 55
+    \subitem {update\-Unknowns}, 56
+  \item {S\-W\-E\-\_\-\-Rusanov\-Block.\-cpp}
+    \subitem {operator$<$$<$}, 79
+  \item {S\-W\-E\-\_\-\-Rusanov\-Block.\-hh}
+    \subitem {operator$<$$<$}, 80
+  \item {S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A}, 56
+    \subitem {compute\-Numerical\-Fluxes}, 57
+    \subitem {simulate}, 57
+    \subitem {update\-Unknowns}, 58
+  \item {S\-W\-E\-\_\-\-Scenario}, 58
+  \item {S\-W\-E\-\_\-\-Scenario.\-hh}
+    \subitem {Boundary\-Edge}, 96
+    \subitem {Boundary\-Type}, 96
+  \item {S\-W\-E\-\_\-\-Sea\-At\-Rest\-Scenario}, 59
+  \item {S\-W\-E\-\_\-\-Splashing\-Cone\-Scenario}, 59
+  \item {S\-W\-E\-\_\-\-Splashing\-Pool\-Scenario}, 60
+    \subitem {get\-Boundary\-Pos}, 60
+  \item {S\-W\-E\-\_\-\-Vis\-Info}, 61
+    \subitem {$\sim$\-S\-W\-E\-\_\-\-Vis\-Info}, 61
+    \subitem {bathy\-Vertical\-Offset}, 61
+    \subitem {bathy\-Vertical\-Scaling}, 61
+    \subitem {water\-Vertical\-Scaling}, 62
+  \item {S\-W\-E\-\_\-\-Wave\-Accumulation\-Block}, 62
+    \subitem {compute\-Numerical\-Fluxes}, 63
+    \subitem {S\-W\-E\-\_\-\-Wave\-Accumulation\-Block}, 62
+    \subitem {S\-W\-E\-\_\-\-Wave\-Accumulation\-Block}, 62
+    \subitem {update\-Unknowns}, 63
+  \item {S\-W\-E\-\_\-\-Wave\-Propagation\-Block}, 63
+    \subitem {$\sim$\-S\-W\-E\-\_\-\-Wave\-Propagation\-Block}, 64
+    \subitem {compute\-Numerical\-Fluxes}, 64
+    \subitem {S\-W\-E\-\_\-\-Wave\-Propagation\-Block}, 64
+    \subitem {S\-W\-E\-\_\-\-Wave\-Propagation\-Block}, 64
+    \subitem {update\-Unknowns}, 64
+  \item {S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda}, 65
+    \subitem {compute\-Numerical\-Fluxes}, 65
+    \subitem {simulate}, 66
+    \subitem {simulate\-Timestep}, 66
+    \subitem {update\-Unknowns}, 66
+  \item {S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-S\-I\-M\-D}, 67
+    \subitem {$\sim$\-S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-S\-I\-M\-D}, 
+		68
+    \subitem {compute\-Numerical\-Fluxes}, 68
+    \subitem {S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-S\-I\-M\-D}, 67
+    \subitem {simulate}, 68
+    \subitem {simulate\-Timestep}, 68
+    \subitem {S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-S\-I\-M\-D}, 67
+    \subitem {update\-Unknowns}, 69
+  \item {set\-Bathymetry}
+    \subitem {S\-W\-E\-\_\-\-Block}, 44
+  \item {set\-Boundary\-Bathymetry}
+    \subitem {S\-W\-E\-\_\-\-Block}, 44
+  \item {set\-Boundary\-Conditions}
+    \subitem {S\-W\-E\-\_\-\-Block}, 45
+    \subitem {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A}, 50
+  \item {set\-Boundary\-Type}
+    \subitem {S\-W\-E\-\_\-\-Block}, 45
+  \item {set\-Camera}
+    \subitem {Camera}, 19
+  \item {set\-Discharge}
+    \subitem {S\-W\-E\-\_\-\-Block}, 45
+  \item {set\-Ghost\-Layer}
+    \subitem {S\-W\-E\-\_\-\-Block}, 45
+  \item {set\-Process\-Rank}
+    \subitem {tools\-::\-Logger}, 29
+  \item {set\-Rendering\-Mode}
+    \subitem {Visualization}, 71
+  \item {set\-Uniform}
+    \subitem {Shader}, 32
+  \item {set\-Water\-Height}
+    \subitem {S\-W\-E\-\_\-\-Block}, 45
+  \item {Shader}, 31
+    \subitem {$\sim$\-Shader}, 32
+    \subitem {disable\-Shader}, 32
+    \subitem {enable\-Shader}, 32
+    \subitem {get\-Uniform\-Location}, 32
+    \subitem {set\-Uniform}, 32
+    \subitem {Shader}, 31
+    \subitem {shaders\-Loaded}, 32
+  \item {shaders\-Loaded}
+    \subitem {Shader}, 32
+  \item {show\-Next\-Text}
+    \subitem {Text}, 69
+  \item {simulate}
+    \subitem {S\-W\-E\-\_\-\-Block}, 45
+    \subitem {S\-W\-E\-\_\-\-Rusanov\-Block}, 55
+    \subitem {S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A}, 57
+    \subitem {S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda}, 66
+    \subitem {S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-S\-I\-M\-D}, 68
+  \item {simulate\-Timestep}
+    \subitem {S\-W\-E\-\_\-\-Block}, 46
+    \subitem {S\-W\-E\-\_\-\-Rusanov\-Block}, 56
+    \subitem {S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda}, 66
+    \subitem {S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-S\-I\-M\-D}, 68
+  \item {Simulation}, 32
+  \item {src/blocks/\-S\-W\-E\-\_\-\-Block.\-cpp}, 82
+  \item {src/blocks/\-S\-W\-E\-\_\-\-Block.\-hh}, 83
+  \item {src/blocks/\-S\-W\-E\-\_\-\-Wave\-Accumulation\-Block.\-cpp}, 
+		84
+  \item {src/blocks/\-S\-W\-E\-\_\-\-Wave\-Accumulation\-Block.\-hh}, 
+		84
+  \item {src/blocks/\-S\-W\-E\-\_\-\-Wave\-Propagation\-Block.\-cpp}, 
+		85
+  \item {src/blocks/\-S\-W\-E\-\_\-\-Wave\-Propagation\-Block.\-hh}, 86
+  \item {src/blocks/\-S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-S\-I\-M\-D.\-cpp}, 
+		86
+  \item {src/blocks/\-S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-S\-I\-M\-D.\-hh}, 
+		87
+  \item {src/blocks/cuda/\-S\-W\-E\-\_\-\-Block\-C\-U\-D\-A.\-hh}, 75
+  \item {src/blocks/cuda/\-S\-W\-E\-\_\-\-Block\-C\-U\-D\-A\-\_\-kernels.\-hh}, 
+		76
+  \item {src/blocks/cuda/\-S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda.\-hh}, 
+		77
+  \item {src/blocks/cuda/\-S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda\-\_\-kernels.\-hh}, 
+		78
+  \item {src/blocks/rusanov/\-S\-W\-E\-\_\-\-Rusanov\-Block.\-cpp}, 79
+  \item {src/blocks/rusanov/\-S\-W\-E\-\_\-\-Rusanov\-Block.\-hh}, 80
+  \item {src/blocks/rusanov/\-S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A.\-hh}, 
+		81
+  \item {src/blocks/rusanov/\-S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A\-\_\-kernels.\-hh}, 
+		81
+  \item {src/examples/swe\-\_\-mpi.\-cpp}, 88
+  \item {src/examples/swe\-\_\-simple.\-cpp}, 91
+  \item {src/opengl/vbo.\-cpp}, 92
+  \item {src/opengl/vbo.\-h}, 92
+  \item {src/scenarios/\-S\-W\-E\-\_\-\-Asagi\-Scenario.\-cpp}, 93
+  \item {src/scenarios/\-S\-W\-E\-\_\-\-Asagi\-Scenario.\-hh}, 93
+  \item {src/scenarios/\-S\-W\-E\-\_\-\-Asagi\-Scenario\-\_\-vis.\-hh}, 
+		94
+  \item {src/scenarios/\-S\-W\-E\-\_\-\-Scenario.\-hh}, 95
+  \item {src/scenarios/\-S\-W\-E\-\_\-\-Vis\-Info.\-hh}, 97
+  \item {src/scenarios/\-S\-W\-E\-\_\-simple\-\_\-scenarios.\-hh}, 96
+  \item {src/tools/\-Logger.\-cpp}, 100
+  \item {src/tools/\-Logger.\-hh}, 101
+  \item {src/tools/\-Progress\-Bar.\-hh}, 102
+  \item {src/tools/args.\-hh}, 98
+  \item {src/tools/help.\-hh}, 98
+  \item {src/writer/\-Net\-Cdf\-Writer.\-cpp}, 102
+  \item {src/writer/\-Net\-Cdf\-Writer.\-hh}, 103
+  \item {src/writer/\-Vtk\-Writer.\-cpp}, 104
+  \item {src/writer/\-Vtk\-Writer.\-hh}, 104
+  \item {src/writer/\-Writer.\-hh}, 105
+  \item {start\-Panning}
+    \subitem {Camera}, 19
+  \item {swe\-\_\-mpi.\-cpp}
+    \subitem {compute\-Number\-Of\-Block\-Rows}, 89
+    \subitem {exchange\-Bottom\-Top\-Ghost\-Layers}, 89
+    \subitem {exchange\-Left\-Right\-Ghost\-Layers}, 90
+    \subitem {main}, 90
+  \item {swe\-\_\-simple.\-cpp}
+    \subitem {main}, 91
+  \item {synch\-After\-Write}
+    \subitem {S\-W\-E\-\_\-\-Block}, 46
+    \subitem {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A}, 50
+  \item {synch\-Bathymetry\-After\-Write}
+    \subitem {S\-W\-E\-\_\-\-Block}, 46
+    \subitem {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A}, 51
+  \item {synch\-Bathymetry\-Before\-Read}
+    \subitem {S\-W\-E\-\_\-\-Block}, 46
+    \subitem {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A}, 51
+  \item {synch\-Before\-Read}
+    \subitem {S\-W\-E\-\_\-\-Block}, 46
+    \subitem {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A}, 51
+  \item {synch\-Copy\-Layer\-Before\-Read}
+    \subitem {S\-W\-E\-\_\-\-Block}, 46
+    \subitem {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A}, 51
+  \item {synch\-Discharge\-After\-Write}
+    \subitem {S\-W\-E\-\_\-\-Block}, 47
+    \subitem {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A}, 51
+  \item {synch\-Discharge\-Before\-Read}
+    \subitem {S\-W\-E\-\_\-\-Block}, 47
+    \subitem {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A}, 51
+  \item {synch\-Ghost\-Layer\-After\-Write}
+    \subitem {S\-W\-E\-\_\-\-Block}, 47
+    \subitem {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A}, 51
+  \item {synch\-Water\-Height\-After\-Write}
+    \subitem {S\-W\-E\-\_\-\-Block}, 47
+    \subitem {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A}, 51
+  \item {synch\-Water\-Height\-Before\-Read}
+    \subitem {S\-W\-E\-\_\-\-Block}, 47
+    \subitem {S\-W\-E\-\_\-\-Block\-C\-U\-D\-A}, 52
+
+  \indexspace
+
+  \item {test\-Fsolver\-\_\-\-Netupdate\-Left}
+    \subitem {fsolver\-\_\-test}, 23
+  \item {test\-Fsolver\-\_\-eigenvalue}
+    \subitem {fsolver\-\_\-test}, 23
+  \item {test\-Fsolver\-\_\-overload\-Function}
+    \subitem {fsolver\-\_\-test}, 23
+  \item {test\-Fsolver\-\_\-same\-Input}
+    \subitem {fsolver\-\_\-test}, 23
+  \item {test\-Fsolver\-\_\-supersonicproblem}
+    \subitem {fsolver\-\_\-test}, 23
+  \item {Text}, 69
+    \subitem {show\-Next\-Text}, 69
+  \item {toggle\-Rendering\-Mode}
+    \subitem {Visualization}, 72
+  \item {tools\-::\-Args}, 17
+    \subitem {Help}, 17
+    \subitem {parse}, 18
+    \subitem {Result}, 17
+  \item {tools\-::\-Logger}, 23
+    \subitem {$\sim$\-Logger}, 25
+    \subitem {cout}, 25
+    \subitem {get\-Time}, 25
+    \subitem {init\-Wall\-Clock\-Time}, 25
+    \subitem {Logger}, 24
+    \subitem {logger}, 29
+    \subitem {print\-Cell\-Size}, 25
+    \subitem {print\-Element\-Updates\-Done}, 26
+    \subitem {print\-Finish\-Message}, 26
+    \subitem {print\-Iterations\-Done}, 26
+    \subitem {print\-Number\-Of\-Blocks}, 26
+    \subitem {print\-Number\-Of\-Cells}, 26
+    \subitem {print\-Number\-Of\-Cells\-Per\-Process}, 27
+    \subitem {print\-Number\-Of\-Processes}, 27
+    \subitem {print\-Output\-File\-Creation}, 27
+    \subitem {print\-Output\-Time}, 27
+    \subitem {print\-Simulation\-Time}, 27
+    \subitem {print\-Solver\-Statistics}, 28
+    \subitem {print\-Start\-Message}, 28
+    \subitem {print\-Statistics\-Message}, 28
+    \subitem {print\-String}, 28
+    \subitem {print\-Time}, 28
+    \subitem {print\-Wall\-Clock\-Time}, 29
+    \subitem {print\-Welcome\-Message}, 29
+    \subitem {reset\-Clock\-To\-Current\-Time}, 29
+    \subitem {set\-Process\-Rank}, 29
+    \subitem {update\-Time}, 29
+  \item {tools\-::\-Progress\-Bar}, 31
+    \subitem {update}, 31
+
+  \indexspace
+
+  \item {update}
+    \subitem {tools\-::\-Progress\-Bar}, 31
+  \item {update\-Time}
+    \subitem {tools\-::\-Logger}, 29
+  \item {update\-Unknowns}
+    \subitem {S\-W\-E\-\_\-\-Block}, 47
+    \subitem {S\-W\-E\-\_\-\-Dimensional\-Splitting}, 52
+    \subitem {S\-W\-E\-\_\-\-Rusanov\-Block}, 56
+    \subitem {S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A}, 58
+    \subitem {S\-W\-E\-\_\-\-Wave\-Accumulation\-Block}, 63
+    \subitem {S\-W\-E\-\_\-\-Wave\-Propagation\-Block}, 64
+    \subitem {S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda}, 66
+    \subitem {S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-S\-I\-M\-D}, 69
+
+  \indexspace
+
+  \item {V\-B\-O}, 69
+    \subitem {finialize}, 69
+    \subitem {get\-Name}, 69
+    \subitem {init}, 70
+  \item {view\-Distance}
+    \subitem {Camera}, 19
+  \item {Visualization}, 70
+    \subitem {$\sim$\-Visualization}, 70
+    \subitem {clean\-Up}, 71
+    \subitem {get\-Cuda\-Normals\-Ptr}, 71
+    \subitem {get\-Cuda\-Water\-Surface\-Ptr}, 71
+    \subitem {init}, 71
+    \subitem {is\-Extension\-Supported}, 71
+    \subitem {render\-Display}, 71
+    \subitem {resize\-Window}, 71
+    \subitem {set\-Rendering\-Mode}, 71
+    \subitem {toggle\-Rendering\-Mode}, 72
+    \subitem {Visualization}, 70
+  \item {Vtk\-Writer}
+    \subitem {io\-::\-Vtk\-Writer}, 72
+
+  \indexspace
+
+  \item {water\-Vertical\-Scaling}
+    \subitem {S\-W\-E\-\_\-\-Asagi\-Japan\-Small\-Vis\-Info}, 33
+    \subitem {S\-W\-E\-\_\-\-Vis\-Info}, 62
+  \item {write\-Time\-Step}
+    \subitem {io\-::\-Net\-Cdf\-Writer}, 30
+    \subitem {io\-::\-Vtk\-Writer}, 73
+    \subitem {io\-::\-Writer}, 74
+  \item {Writer}
+    \subitem {io\-::\-Writer}, 74
+
+  \indexspace
+
+  \item {zoom\-In}
+    \subitem {Camera}, 19
+  \item {zoom\-Out}
+    \subitem {Camera}, 19
+
+\end{theindex}

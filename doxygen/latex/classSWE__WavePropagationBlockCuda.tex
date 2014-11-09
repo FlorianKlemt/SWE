@@ -1,0 +1,125 @@
+\section{S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda Class Reference}
+\label{classSWE__WavePropagationBlockCuda}\index{S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda@{S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda}}
+
+
+{\ttfamily \#include $<$S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda.\-hh$>$}
+
+Inheritance diagram for S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classSWE__WavePropagationBlockCuda}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda} (int l\-\_\-nx, int l\-\_\-ny, float l\-\_\-dx, float l\-\_\-dy)\label{classSWE__WavePropagationBlockCuda_a82f9de16ebab1bff58ead034416ab9ef}
+
+\item 
+void {\bf simulate\-Timestep} (float i\-\_\-d\-T)
+\begin{DoxyCompactList}\small\item\em execute a single time step (with fixed time step size) of the simulation \end{DoxyCompactList}\item 
+float {\bf simulate} (float, float)
+\item 
+void {\bf compute\-Numerical\-Fluxes} ()
+\begin{DoxyCompactList}\small\item\em compute the numerical fluxes for each edge of the Cartesian grid \end{DoxyCompactList}\item 
+void {\bf update\-Unknowns} (const float i\-\_\-delta\-T)
+\begin{DoxyCompactList}\small\item\em compute the new values of the unknowns h, hu, and hv in all grid cells \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\doxyref{S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda}{p.}{classSWE__WavePropagationBlockCuda} is an implementation of the S\-W\-E\-\_\-\-Block\-Cuda abstract class. It uses a wave propagation solver which is defined with the pre-\/compiler flag W\-A\-V\-E\-\_\-\-P\-R\-O\-P\-A\-G\-A\-T\-I\-O\-N\-\_\-\-S\-O\-L\-V\-E\-R (see above).
+
+Possible wave propagation solvers are\-: F-\/\-Wave, $<$strike$>$Approximate Augmented Riemann, Hybrid (f-\/wave + augmented).$<$/strike$>$ (details can be found in the corresponding source files) 
+
+\subsection{Member Function Documentation}
+\index{S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda@{S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda}!compute\-Numerical\-Fluxes@{compute\-Numerical\-Fluxes}}
+\index{compute\-Numerical\-Fluxes@{compute\-Numerical\-Fluxes}!SWE_WavePropagationBlockCuda@{S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda}}
+\subsubsection[{compute\-Numerical\-Fluxes}]{\setlength{\rightskip}{0pt plus 5cm}void S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda\-::compute\-Numerical\-Fluxes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSWE__WavePropagationBlockCuda_a8a89bf61b9fc4433652f400ca8e564ed}
+
+
+compute the numerical fluxes for each edge of the Cartesian grid 
+
+The computation of fluxes strongly depends on the chosen numerical method. Hence, this purely virtual function has to be implemented in the respective derived classes. 
+
+Implements {\bf S\-W\-E\-\_\-\-Block} \doxyref{}{p.}{classSWE__Block_a94dcf2c6ae31731e4586e45628b0c00e}.
+
+\index{S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda@{S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda}!simulate@{simulate}}
+\index{simulate@{simulate}!SWE_WavePropagationBlockCuda@{S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda}}
+\subsubsection[{simulate}]{\setlength{\rightskip}{0pt plus 5cm}float S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda\-::simulate (
+\begin{DoxyParamCaption}
+\item[{float}]{i\-\_\-t\-Start, }
+\item[{float}]{i\-\_\-t\-End}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSWE__WavePropagationBlockCuda_aa7cb155a2c8a76171fa39daff2b30ce3}
+perform the simulation starting with simulation time t\-Start, until simulation time t\-End is reached
+
+simulate implements the main simulation loop between two checkpoints; Note\-: this implementation can only be used, if you only use a single \doxyref{S\-W\-E\-\_\-\-Block}{p.}{classSWE__Block} and only apply simple boundary conditions! In particular, \doxyref{S\-W\-E\-\_\-\-Block\-::simulate}{p.}{classSWE__Block_a69784e2be2d09035fb2af9d306768f07} can not trigger calls to exchange values of copy and ghost layers between blocks! 
+\begin{DoxyParams}{Parameters}
+{\em t\-Start} & time where the simulation is started \\
+\hline
+{\em t\-End} & time of the next checkpoint \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+actual end time reached 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf S\-W\-E\-\_\-\-Block} \doxyref{}{p.}{classSWE__Block_a69784e2be2d09035fb2af9d306768f07}.
+
+\index{S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda@{S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda}!simulate\-Timestep@{simulate\-Timestep}}
+\index{simulate\-Timestep@{simulate\-Timestep}!SWE_WavePropagationBlockCuda@{S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda}}
+\subsubsection[{simulate\-Timestep}]{\setlength{\rightskip}{0pt plus 5cm}void S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda\-::simulate\-Timestep (
+\begin{DoxyParamCaption}
+\item[{float}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSWE__WavePropagationBlockCuda_a1e79efd0b3f90e793add52fd5155410a}
+
+
+execute a single time step (with fixed time step size) of the simulation 
+
+Executes a single timestep with fixed time step size
+\begin{DoxyItemize}
+\item compute net updates for every edge
+\item update cell values with the net updates
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & time step width of the update \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from {\bf S\-W\-E\-\_\-\-Block} \doxyref{}{p.}{classSWE__Block_add6908e1ceb261a0a1f3ebc262cc5f11}.
+
+\index{S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda@{S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda}!update\-Unknowns@{update\-Unknowns}}
+\index{update\-Unknowns@{update\-Unknowns}!SWE_WavePropagationBlockCuda@{S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda}}
+\subsubsection[{update\-Unknowns}]{\setlength{\rightskip}{0pt plus 5cm}void S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda\-::update\-Unknowns (
+\begin{DoxyParamCaption}
+\item[{const float}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSWE__WavePropagationBlockCuda_a4163045a47a73515841e754ca3859fc5}
+
+
+compute the new values of the unknowns h, hu, and hv in all grid cells 
+
+based on the numerical fluxes (computed by compute\-Numerical\-Fluxes) and the specified time step size dt, an Euler time step is executed. As the computational fluxes will depend on the numerical method, this purely virtual function has to be implemented separately for each specific numerical model (and parallelisation approach). 
+\begin{DoxyParams}{Parameters}
+{\em dt} & size of the time step \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf S\-W\-E\-\_\-\-Block} \doxyref{}{p.}{classSWE__Block_ab2b4b659f23d5d45413dece8d2da3298}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/blocks/cuda/{\bf S\-W\-E\-\_\-\-Wave\-Propagation\-Block\-Cuda.\-hh}\end{DoxyCompactItemize}

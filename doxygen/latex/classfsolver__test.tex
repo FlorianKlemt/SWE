@@ -1,0 +1,75 @@
+\section{fsolver\-\_\-test Class Reference}
+\label{classfsolver__test}\index{fsolver\-\_\-test@{fsolver\-\_\-test}}
+
+
+{\ttfamily \#include $<$fsolver\-\_\-test.\-h$>$}
+
+Inheritance diagram for fsolver\-\_\-test\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classfsolver__test}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf test\-Fsolver\-\_\-eigenvalue} (void)
+\item 
+void {\bf test\-Fsolver\-\_\-same\-Input} (void)
+\item 
+void {\bf test\-Fsolver\-\_\-supersonicproblem} (void)
+\item 
+void {\bf test\-Fsolver\-\_\-\-Netupdate\-Left} (void)
+\item 
+void {\bf test\-Fsolver\-\_\-overload\-Function} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Test class for fsolver implementation. This file contains serveral tests for task 1.\-4 and 2.\-3 
+
+\subsection{Member Function Documentation}
+\index{fsolver\-\_\-test@{fsolver\-\_\-test}!test\-Fsolver\-\_\-eigenvalue@{test\-Fsolver\-\_\-eigenvalue}}
+\index{test\-Fsolver\-\_\-eigenvalue@{test\-Fsolver\-\_\-eigenvalue}!fsolver_test@{fsolver\-\_\-test}}
+\subsubsection[{test\-Fsolver\-\_\-eigenvalue}]{\setlength{\rightskip}{0pt plus 5cm}void fsolver\-\_\-test\-::test\-Fsolver\-\_\-eigenvalue (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classfsolver__test_a9ee19f26b6d89b40a9ca8d8297b21ef6}
+Testing fsolver with calculated values \index{fsolver\-\_\-test@{fsolver\-\_\-test}!test\-Fsolver\-\_\-\-Netupdate\-Left@{test\-Fsolver\-\_\-\-Netupdate\-Left}}
+\index{test\-Fsolver\-\_\-\-Netupdate\-Left@{test\-Fsolver\-\_\-\-Netupdate\-Left}!fsolver_test@{fsolver\-\_\-test}}
+\subsubsection[{test\-Fsolver\-\_\-\-Netupdate\-Left}]{\setlength{\rightskip}{0pt plus 5cm}void fsolver\-\_\-test\-::test\-Fsolver\-\_\-\-Netupdate\-Left (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classfsolver__test_a29112a3593900fcf17c582a885f47e31}
+Testing fsolver for Task 2 Testing netupdate and max\-Edge\-Speed with calculated values. \index{fsolver\-\_\-test@{fsolver\-\_\-test}!test\-Fsolver\-\_\-overload\-Function@{test\-Fsolver\-\_\-overload\-Function}}
+\index{test\-Fsolver\-\_\-overload\-Function@{test\-Fsolver\-\_\-overload\-Function}!fsolver_test@{fsolver\-\_\-test}}
+\subsubsection[{test\-Fsolver\-\_\-overload\-Function}]{\setlength{\rightskip}{0pt plus 5cm}void fsolver\-\_\-test\-::test\-Fsolver\-\_\-overload\-Function (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classfsolver__test_ab69baea0d5516afd3620724a42b4d223}
+Cxxtests for overloaded function \index{fsolver\-\_\-test@{fsolver\-\_\-test}!test\-Fsolver\-\_\-same\-Input@{test\-Fsolver\-\_\-same\-Input}}
+\index{test\-Fsolver\-\_\-same\-Input@{test\-Fsolver\-\_\-same\-Input}!fsolver_test@{fsolver\-\_\-test}}
+\subsubsection[{test\-Fsolver\-\_\-same\-Input}]{\setlength{\rightskip}{0pt plus 5cm}void fsolver\-\_\-test\-::test\-Fsolver\-\_\-same\-Input (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classfsolver__test_a1f1e202106dd97f295aa4c3a2b826cdd}
+Testing fsolver with same inputs. left\-\_\-h == right\-\_\-h left\-\_\-hu == right\-\_\-hu \index{fsolver\-\_\-test@{fsolver\-\_\-test}!test\-Fsolver\-\_\-supersonicproblem@{test\-Fsolver\-\_\-supersonicproblem}}
+\index{test\-Fsolver\-\_\-supersonicproblem@{test\-Fsolver\-\_\-supersonicproblem}!fsolver_test@{fsolver\-\_\-test}}
+\subsubsection[{test\-Fsolver\-\_\-supersonicproblem}]{\setlength{\rightskip}{0pt plus 5cm}void fsolver\-\_\-test\-::test\-Fsolver\-\_\-supersonicproblem (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classfsolver__test_a094e58fc97459a59c94a5796a7a87846}
+Supersonic problem
+
+lambda1\-\_\-roe \&\& lambda2\-\_\-roe $<$ 0 =$>$ left\-\_\-wavespeed = lambda1\-\_\-roe right\-\_\-wavespeed = 0
+
+lambda2\-\_\-roe \&\& lambda2\-\_\-roe $>$ 0 =$>$ left\-\_\-wavespeed = 0 right\-\_\-wavespeed = lambda2\-\_\-roe 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/solvers/fsolver\-\_\-test.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,104 @@
+\section{S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A Class Reference}
+\label{classSWE__RusanovBlockCUDA}\index{S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A@{S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A}}
+
+
+{\ttfamily \#include $<$S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A.\-hh$>$}
+
+Inheritance diagram for S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classSWE__RusanovBlockCUDA}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A} (float \-\_\-offset\-X=0, float \-\_\-offset\-Y=0, const int i\-\_\-cuda\-Device=0)\label{classSWE__RusanovBlockCUDA_a5bd6db4a52d816534923d851ea6f9314}
+
+\item 
+virtual void {\bf compute\-Numerical\-Fluxes} ()
+\begin{DoxyCompactList}\small\item\em compute the numerical fluxes for each edge of the Cartesian grid \end{DoxyCompactList}\item 
+virtual void {\bf update\-Unknowns} (float dt)
+\begin{DoxyCompactList}\small\item\em compute the new values of the unknowns h, hu, and hv in all grid cells \end{DoxyCompactList}\item 
+virtual void {\bf simulate\-Timestep} (float dt)\label{classSWE__RusanovBlockCUDA_aa039b202a505cf31ab16e8c74dc4153b}
+
+\begin{DoxyCompactList}\small\item\em execute a single time step of the simulation \end{DoxyCompactList}\item 
+virtual float {\bf simulate} (float t\-Start, float t\-End)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& {\bfseries operator$<$$<$} (ostream \&os, const {\bf S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A} \&swe)\label{classSWE__RusanovBlockCUDA_adbdcb6417643b695657724ea16f84954}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\doxyref{S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A}{p.}{classSWE__RusanovBlockCUDA} extends the base class \doxyref{S\-W\-E\-\_\-\-Block\-C\-U\-D\-A}{p.}{classSWE__BlockCUDA}, and provides a concrete C\-U\-D\-A implementation of a simple shallow water model based on Rusanov Flux computation on the edges and explicit time stepping. 
+
+\subsection{Member Function Documentation}
+\index{S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A@{S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A}!compute\-Numerical\-Fluxes@{compute\-Numerical\-Fluxes}}
+\index{compute\-Numerical\-Fluxes@{compute\-Numerical\-Fluxes}!SWE_RusanovBlockCUDA@{S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A}}
+\subsubsection[{compute\-Numerical\-Fluxes}]{\setlength{\rightskip}{0pt plus 5cm}virtual void S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A\-::compute\-Numerical\-Fluxes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSWE__RusanovBlockCUDA_a64fa005a8f69f49ac7894dffcec39787}
+
+
+compute the numerical fluxes for each edge of the Cartesian grid 
+
+The computation of fluxes strongly depends on the chosen numerical method. Hence, this purely virtual function has to be implemented in the respective derived classes. 
+
+Implements {\bf S\-W\-E\-\_\-\-Block} \doxyref{}{p.}{classSWE__Block_a94dcf2c6ae31731e4586e45628b0c00e}.
+
+\index{S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A@{S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A}!simulate@{simulate}}
+\index{simulate@{simulate}!SWE_RusanovBlockCUDA@{S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A}}
+\subsubsection[{simulate}]{\setlength{\rightskip}{0pt plus 5cm}virtual float S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A\-::simulate (
+\begin{DoxyParamCaption}
+\item[{float}]{i\-\_\-t\-Start, }
+\item[{float}]{i\-\_\-t\-End}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSWE__RusanovBlockCUDA_a42c63cf7d3c5609768aa28263393efb6}
+perform the simulation starting with simulation time t\-Start, until simulation time t\-End is reached
+
+simulate implements the main simulation loop between two checkpoints; Note\-: this implementation can only be used, if you only use a single \doxyref{S\-W\-E\-\_\-\-Block}{p.}{classSWE__Block} and only apply simple boundary conditions! In particular, \doxyref{S\-W\-E\-\_\-\-Block\-::simulate}{p.}{classSWE__Block_a69784e2be2d09035fb2af9d306768f07} can not trigger calls to exchange values of copy and ghost layers between blocks! 
+\begin{DoxyParams}{Parameters}
+{\em t\-Start} & time where the simulation is started \\
+\hline
+{\em t\-End} & time of the next checkpoint \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+actual end time reached 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf S\-W\-E\-\_\-\-Block} \doxyref{}{p.}{classSWE__Block_a69784e2be2d09035fb2af9d306768f07}.
+
+\index{S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A@{S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A}!update\-Unknowns@{update\-Unknowns}}
+\index{update\-Unknowns@{update\-Unknowns}!SWE_RusanovBlockCUDA@{S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A}}
+\subsubsection[{update\-Unknowns}]{\setlength{\rightskip}{0pt plus 5cm}virtual void S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A\-::update\-Unknowns (
+\begin{DoxyParamCaption}
+\item[{float}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSWE__RusanovBlockCUDA_a037264d8f044fd4d323420562c82a218}
+
+
+compute the new values of the unknowns h, hu, and hv in all grid cells 
+
+based on the numerical fluxes (computed by compute\-Numerical\-Fluxes) and the specified time step size dt, an Euler time step is executed. As the computational fluxes will depend on the numerical method, this purely virtual function has to be implemented separately for each specific numerical model (and parallelisation approach). 
+\begin{DoxyParams}{Parameters}
+{\em dt} & size of the time step \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf S\-W\-E\-\_\-\-Block} \doxyref{}{p.}{classSWE__Block_ab2b4b659f23d5d45413dece8d2da3298}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/blocks/rusanov/{\bf S\-W\-E\-\_\-\-Rusanov\-Block\-C\-U\-D\-A.\-hh}\end{DoxyCompactItemize}
