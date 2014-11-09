@@ -779,11 +779,10 @@ SWE_DimensionalSplitting::SWE_DimensionalSplitting(int l_nx, int l_ny, float l_d
 
 
 /**
- * compute numerical fluxes with x and y sweep
+ * Compute numerical fluxes with x and y sweep for Task 3.2
  */
 void SWE_DimensionalSplitting::computeNumericalFluxes()
 {
-	//h[x][y]
 
 	T maxWaveSpeed_x = 0.0f;
 	T maxWaveSpeed_y = 0.0f;
@@ -809,9 +808,6 @@ void SWE_DimensionalSplitting::computeNumericalFluxes()
 		}
 	}
 
-
-
-
 	//ysweep
 	for(int x = 1; x < nx+1 ; x++)
 	{
@@ -836,10 +832,11 @@ void SWE_DimensionalSplitting::computeNumericalFluxes()
 
 
 
-	// Compute CFL condition
+	//CFL condition
 	maxTimestep = 0.4f * dx/maxWaveSpeed_x;
 
 
+	//Debug output for task 3.2
 	#ifndef NDEBUG
 
 	printf("DEBUG Statement! CFL condition is ");
@@ -860,7 +857,7 @@ void SWE_DimensionalSplitting::computeNumericalFluxes()
 }
 
 /**
- * Updateing height and momentum
+ * Updateing height and momentum in x and y direction
  */
 void SWE_DimensionalSplitting::updateUnknowns(float dt)
 {
@@ -878,7 +875,7 @@ void SWE_DimensionalSplitting::updateUnknowns(float dt)
 
 			if(b[x][y] > 0.0f)
 			{
-				//There is no water in this cell
+				//There is no water in this cell => there is no height and momentum
 				h[x][y] = 0.0f;
 				hu[x][y] = 0.0f;
 				hv[x][y] = 0.0f;
