@@ -110,7 +110,7 @@ SWE_WavePropagationBlock::computeNumericalFluxes ()
 		for (int j=1; j < ny+1; ++j) {
 			float maxEdgeSpeed;
 
-			wavePropagationSolver.computeNetUpdates (
+			/*wavePropagationSolver.computeNetUpdates (
 				h[i - 1][j], h[i][j],
 				hu[i - 1][j], hu[i][j],
 				b[i - 1][j], b[i][j],
@@ -118,6 +118,7 @@ SWE_WavePropagationBlock::computeNumericalFluxes ()
 				huNetUpdatesLeft[i - 1][j - 1], huNetUpdatesRight[i - 1][j - 1],
 				maxEdgeSpeed
 			);
+			*/
 
 			//update the thread-local maximum wave speed
 			maxWaveSpeed = std::max(maxWaveSpeed, maxEdgeSpeed);
@@ -132,6 +133,7 @@ SWE_WavePropagationBlock::computeNumericalFluxes ()
 		for (int j=1; j < ny + 2; j++) {
 			float maxEdgeSpeed;
 
+			/*
 			wavePropagationSolver.computeNetUpdates (
 				h[i][j - 1], h[i][j],
 				hv[i][j - 1], hv[i][j],
@@ -140,6 +142,7 @@ SWE_WavePropagationBlock::computeNumericalFluxes ()
 				hvNetUpdatesBelow[i - 1][j - 1], hvNetUpdatesAbove[i - 1][j - 1],
 				maxEdgeSpeed
 			);
+			*/
 
 			//update the maximum wave speed
 			maxWaveSpeed = std::max (maxWaveSpeed, maxEdgeSpeed);
