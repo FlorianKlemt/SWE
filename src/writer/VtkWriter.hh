@@ -27,7 +27,7 @@
 #define VTKWRITER_HH_
 
 #include <sstream>
-#include "writer/Writer.hh"
+#include "Writer.hh"
 
 namespace io {
 	class VtkWriter;

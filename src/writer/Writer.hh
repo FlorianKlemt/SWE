@@ -26,7 +26,7 @@
 #ifndef WRITER_HH_
 #define WRITER_HH_
 
-#include "tools/help.hh"
+#include "../tools/help.hh"
 
 namespace io {
 	struct BoundarySize;

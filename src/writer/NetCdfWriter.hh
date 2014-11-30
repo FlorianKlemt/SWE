@@ -45,7 +45,7 @@
 #undef MPI_INCLUDED_NETCDF
 #endif
 
-#include "writer/Writer.hh"
+#include "Writer.hh"
 
 namespace io {
   class NetCdfWriter;

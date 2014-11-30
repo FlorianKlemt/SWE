@@ -30,8 +30,196 @@
 #define __SWE_SIMPLE_SCENARIOS_H
 
 #include <cmath>
+#include <regex>
 
 #include "SWE_Scenario.hh"
+
+
+/*
+ * Artificial Tsunami without NetCDF
+ */
+class SWE_ArtificialTsunamiScenario : public SWE_Scenario {
+
+  public:
+
+    float getBathymetry(float x, float y) {
+    	return -100;
+    };
+
+    float getWaterHeight(float x, float y) {
+    	if(x>4500 && x<5500 && y>4500 && y<5500){
+    		float x_relative=x-5000;
+    		float y_relative=y-5000;
+    		return 100+(5*sin(((x_relative/500)+1)*M_PI)*(-pow((y_relative/500),2)+1));
+    	}else{
+    		return 100;
+    	}
+    };
+
+	virtual float endSimulation() {
+		return (float) 100;
+	};
+
+    virtual BoundaryType getBoundaryType(BoundaryEdge edge) {
+    	return OUTFLOW;
+    };
+
+    /** Get the boundary positions
+     *
+     * @param i_edge which edge
+     * @return value in the corresponding dimension
+     */
+    float getBoundaryPos(BoundaryEdge i_edge) {
+       if ( i_edge == BND_LEFT )
+         return (float)0;
+       else if ( i_edge == BND_RIGHT)
+         return (float)10000;
+       else if ( i_edge == BND_BOTTOM )
+         return (float)0;
+       else
+         return (float)10000;
+    };
+};
+
+
+
+
+/*
+ * Tsunami Scenario with NetDCF
+ * (Linker Failure!!)
+ */
+class TsunamiScenario : public SWE_Scenario {
+  private:
+	int simTime;
+	std::string boundaryCond;
+
+  public:
+
+    float getBathymetry(float x, float y) {
+    	float xpositions[],ypositions[];
+    	float bathymetry[][],disp[][];
+    	/*parse Bathymetry
+    	  suppose xvalues are in xpositions array,
+    	   yvalues in ypositions array and bathymetry data
+    	   in 2-dimnesional array bathymetry
+    	   suppose displacement data is in 2-dimensional array disp
+		*/
+    	float closestx,closesty;
+    	//get closest x-value from the dataset to the required x value
+    	float low_x,high_x,low_y,high_y;
+    	float i;
+    	for(i=0;i<sizeof(xpositions);i++){
+    		if(x<xpositions[i]){
+    			low_x=xpositions[i];
+    			continue;
+    		}else{
+    			high_x=xpositions[i];
+    			break;
+    		}
+    	}
+    	closestx=min(abs(high_x-x),abs(low_x-x));
+    	if(abs(low_x-x)<abs(high_x-x)){
+    		i--;
+    	}
+    	//i ist jetzt arrayindex des nächsten x-Wertes
+
+    	//get closest y-value from the dataset to the required y value
+        float j;
+    	for(j=0;j<sizeof(ypositions);j++){
+    	    if(y<ypositions[j]){
+    			low_y=ypositions[j];
+    	    	continue;
+    	    }else{
+    	    	high_y=ypositions[j];
+    	    	break;
+    	    }
+    	 }
+    	 closesty=min(abs(high_y-y),abs(low_y-y));
+    	 if(abs(low_y-y)<abs(high_y-y)){
+    	     j--;
+    	 }
+    	 //j ist jetzt arrayindex des nächsten y-Wertes
+
+    	 //bathymetry nach erdbeben = bathymetry vor erdbeben + disp
+    	float bath= bathymetry[i][j]+disp[i][j];
+    	//regulate bathymetry to range -20...20
+    	if(bath>20){
+    		return 20;
+    	}else if(bath<-20){
+    		return -20;
+    	}else{
+    		return bath;
+    	}
+    };
+
+    float getWaterHeight(float x, float y) {
+    	float xpositions[],ypositions[];
+    	float bathymetry[][];
+    	//parse WaterHeight
+    	//similar to structure in getBathymetry
+		float closestx, closesty;
+		float low_x, high_x, low_y, high_y;
+		float i;
+		for (i = 0; i < sizeof(xpositions); i++) {
+			if (x < xpositions[i]) {
+				low_x = xpositions[i];
+				continue;
+			} else {
+				high_x = xpositions[i];
+				break;
+			}
+		}
+		closestx = min(abs(high_x - x), abs(low_x - x));
+		if (abs(low_x - x) < abs(high_x - x)) {
+			i--;
+		}
+		float j;
+		for (j = 0; j < sizeof(ypositions); j++) {
+			if (y < ypositions[j]) {
+				low_y = ypositions[j];
+				continue;
+			} else {
+				high_y = ypositions[j];
+				break;
+			}
+		}
+		closesty = min(abs(high_y - y), abs(low_y - y));
+		if (abs(low_y - y) < abs(high_y - y)) {
+			j--;
+		}
+
+		//water height =-min(bathymetry vor erdbeben,0)
+		return (bathymetry[i][j]>0)?bathymetry[i][j]:0;
+    };
+
+	virtual float endSimulation() {
+		return simTime;
+	};
+
+    virtual BoundaryType getBoundaryType(BoundaryEdge edge) {
+    	return boundaryCond;
+    };
+
+    /** Get the boundary positions
+     *
+     * @param i_edge which edge
+     * @return value in the corresponding dimension
+     */
+    float getBoundaryPos(BoundaryEdge i_edge) {
+       if ( i_edge == BND_LEFT )
+         return (float)0;
+       else if ( i_edge == BND_RIGHT)
+         return (float)10000;
+       else if ( i_edge == BND_BOTTOM )
+         return (float)0;
+       else
+         return (float)10000;
+    };
+};
+
+
+
+
 
 /**
  * Scenario "Radial Dam Break":

@@ -9,7 +9,7 @@
 #include "tools/args.hh"
 #include "tools/help.hh"
 #include "tools/Logger.hh"
-#include "tools/ProgressBar.hh"
+//#include "tools/ProgressBar.hh"
 
 /**
  * Main program for the simulation of dimensionalsplitting.
@@ -24,6 +24,9 @@ int main( int argc, char** argv ) {
   args.addOption("grid-size-x", 'x', "Number of cells in x direction");
   args.addOption("grid-size-y", 'y', "Number of cells in y direction");
   args.addOption("output-basepath", 'o', "Output base file name");
+  //add Options for Simulation Time and Boundary Condition arguments
+  args.addOption("simulated-time", 't', "Simulation time");
+  args.addOption("boundary-condition", 'b', "Boundary Condition");
   #endif
 
   tools::Args::Result ret = args.parse(argc, argv);
@@ -42,20 +45,29 @@ int main( int argc, char** argv ) {
   //! l_baseName of the plots.
   std::string l_baseName;
 
+  int l_simTime;
+  std::string l_boundaryCond;
+
   // read command line parameters
   #ifndef READXML
   l_nX = args.getArgument<int>("grid-size-x");
   l_nY = args.getArgument<int>("grid-size-y");
   l_baseName = args.getArgument<std::string>("output-basepath");
+  //read simulation-time and boundary-condition arguments
+  l_simTime= args.getArgument<int>("simulation-time");
+  l_boundaryCond= args.getArgument<std::string>("boundary-condition");
   #endif
 
   // create a simple artificial scenario
-  SWE_RadialDamBreakScenario l_scenario;
-
+  //SWE_RadialDamBreakScenario l_scenario;
+  //SWE_ArtificialTsunamiScenario l_scenario;
+  TsunamiScenario l_scenario;
+  l_scenario.simTime=l_simTime;
+  l_scenario.boundaryCond=l_boundaryCond;
 
 
   //! number of checkpoints for visualization (at each checkpoint in time, an output file is written).
-  int l_numberOfCheckPoints = 400;
+  int l_numberOfCheckPoints = 100;
 
   //! size of a single cell in x- and y-direction
   float l_dX, l_dY;
@@ -93,11 +105,11 @@ int main( int argc, char** argv ) {
   }
 
   // Init fancy progressbar
-  tools::ProgressBar progressBar(l_endSimulation);
+  //tools::ProgressBar progressBar(l_endSimulation);
 
   // write the output at time zero
   tools::Logger::logger.printOutputTime((float) 0.);
-  progressBar.update(0.);
+  //progressBar.update(0.);
 
   std::string l_fileName = generateBaseFileName(l_baseName,0,0);
   //boundary size of the ghost layers
@@ -121,7 +133,7 @@ int main( int argc, char** argv ) {
    * Simulation.
    */
   // print the start message and reset the wall clock time
-  progressBar.clear();
+  //progressBar.clear();
   tools::Logger::logger.printStartMessage();
   tools::Logger::logger.initWallClockTime(time(NULL));
 
@@ -162,15 +174,15 @@ int main( int argc, char** argv ) {
       l_iterations++;
 
       // print the current simulation time
-      progressBar.clear();
+      //progressBar.clear();
       tools::Logger::logger.printSimulationTime(l_t);
-      progressBar.update(l_t);
+      //progressBar.update(l_t);
     }
 
     // print current simulation time of the output
-    progressBar.clear();
+    //progressBar.clear();
     tools::Logger::logger.printOutputTime(l_t);
-    progressBar.update(l_t);
+    //progressBar.update(l_t);
 
 
     // write output
@@ -186,7 +198,7 @@ int main( int argc, char** argv ) {
    * Finalize.
    */
   // write the statistics message
-  progressBar.clear();
+  //progressBar.clear();
   tools::Logger::logger.printStatisticsMessage();
 
   // print the cpu time

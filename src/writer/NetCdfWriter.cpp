@@ -85,6 +85,17 @@ io::NetCdfWriter::NetCdfWriter( const std::string &i_baseName,
 	//variables (TODO: add rest of CF-1.5)
 	int l_xVar, l_yVar;
 
+	//3.1 add Boundary Conditions
+	int l_BND_LEFT, l_BND_RIGHT, l_BND_TOP, l_BND_BOTTOM;
+	BoundaryEdge l_edge;
+	nc_def_var(datafile, "BoundaryType",NC_STRING,0,&l_edge);
+
+	nc_def_var(dataFile, "BND_LEFT",NC_FLOAT,0,&l_BND_LEFT);
+	nc_def_var(dataFile, "BND_RIGHT",NC_FLOAT,0,&l_BND_RIGHT);
+	nc_def_var(dataFile, "BND_TOP",NC_FLOAT,0,&l_BND_TOP);
+	nc_def_var(dataFile, "BND_BOTTOM",NC_FLOAT,0,&l_BND_BOTTOM);
+	//end 3.1
+
 	nc_def_var(dataFile, "time", NC_FLOAT, 1, &l_timeDim, &timeVar);
 	ncPutAttText(timeVar, "long_name", "Time");
 	ncPutAttText(timeVar, "units", "seconds since simulation start"); // the word "since" is important for the paraview reader

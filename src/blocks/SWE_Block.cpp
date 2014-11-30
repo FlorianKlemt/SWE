@@ -29,7 +29,7 @@
 #include "SWE_Block.hh"
 #include "tools/help.hh"
 
-#include "solvers/fsolver.cpp"
+#include "../fsolver/fsolver.cpp"
 
 #include <cmath>
 #include <iostream>
