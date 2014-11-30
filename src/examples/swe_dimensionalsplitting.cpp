@@ -24,6 +24,7 @@ int main( int argc, char** argv ) {
   args.addOption("grid-size-x", 'x', "Number of cells in x direction");
   args.addOption("grid-size-y", 'y', "Number of cells in y direction");
   args.addOption("output-basepath", 'o', "Output base file name");
+
   //add Options for Simulation Time and Boundary Condition arguments
   args.addOption("simulated-time", 't', "Simulation time");
   args.addOption("boundary-condition", 'b', "Boundary Condition");
@@ -46,21 +47,35 @@ int main( int argc, char** argv ) {
   std::string l_baseName;
 
   int l_simTime;
-  std::string l_boundaryCond;
+  BoundaryType l_boundaryCond;
 
   // read command line parameters
   #ifndef READXML
   l_nX = args.getArgument<int>("grid-size-x");
   l_nY = args.getArgument<int>("grid-size-y");
   l_baseName = args.getArgument<std::string>("output-basepath");
+
   //read simulation-time and boundary-condition arguments
   l_simTime= args.getArgument<int>("simulation-time");
-  l_boundaryCond= args.getArgument<std::string>("boundary-condition");
+  std::string boundaryCondString= args.getArgument<std::string>("boundary-condition");
+  if(boundaryCondString.compare("WALL")){
+	  l_boundaryCond=WALL;
+  }else if(boundaryCondString.compare("INFLOW")){
+	  l_boundaryCond=INFLOW;
+  }else if(boundaryCondString.compare("CONNECT")){
+	  l_boundaryCond=CONNECT;
+  }else if(boundaryCondString.compare("PASSIVE")){
+	  l_boundaryCond=PASSIVE;
+  }else{//Outflow per default
+	  l_boundaryCond=OUTFLOW;
+  }
   #endif
 
   // create a simple artificial scenario
   //SWE_RadialDamBreakScenario l_scenario;
   //SWE_ArtificialTsunamiScenario l_scenario;
+
+  //TsunamiScenario with NetCDF
   TsunamiScenario l_scenario;
   l_scenario.simTime=l_simTime;
   l_scenario.boundaryCond=l_boundaryCond;

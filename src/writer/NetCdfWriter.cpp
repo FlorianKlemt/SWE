@@ -88,7 +88,7 @@ io::NetCdfWriter::NetCdfWriter( const std::string &i_baseName,
 	//3.1 add Boundary Conditions
 	int l_BND_LEFT, l_BND_RIGHT, l_BND_TOP, l_BND_BOTTOM;
 	BoundaryEdge l_edge;
-	nc_def_var(datafile, "BoundaryType",NC_STRING,0,&l_edge);
+	nc_def_var(dataFile, "BoundaryType", NC_STRING, 0, &l_edge);
 
 	nc_def_var(dataFile, "BND_LEFT",NC_FLOAT,0,&l_BND_LEFT);
 	nc_def_var(dataFile, "BND_RIGHT",NC_FLOAT,0,&l_BND_RIGHT);

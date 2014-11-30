@@ -30,7 +30,6 @@
 #define __SWE_SIMPLE_SCENARIOS_H
 
 #include <cmath>
-#include <regex>
 
 #include "SWE_Scenario.hh"
 
@@ -86,18 +85,19 @@ class SWE_ArtificialTsunamiScenario : public SWE_Scenario {
 
 /*
  * Tsunami Scenario with NetDCF
- * (Linker Failure!!)
+ *
  */
 class TsunamiScenario : public SWE_Scenario {
-  private:
-	int simTime;
-	std::string boundaryCond;
 
   public:
+	int simTime;
+	BoundaryType boundaryCond;
 
     float getBathymetry(float x, float y) {
-    	float xpositions[],ypositions[];
-    	float bathymetry[][],disp[][];
+    	float xpositions[1000];
+    	float ypositions[1000];
+    	float bathymetry[1000][1000];
+		float disp[1000][1000];
     	/*parse Bathymetry
     	  suppose xvalues are in xpositions array,
     	   yvalues in ypositions array and bathymetry data
@@ -107,8 +107,8 @@ class TsunamiScenario : public SWE_Scenario {
     	float closestx,closesty;
     	//get closest x-value from the dataset to the required x value
     	float low_x,high_x,low_y,high_y;
-    	float i;
-    	for(i=0;i<sizeof(xpositions);i++){
+    	int i;
+    	for(i=0;i<sizeof(xpositions)/sizeof(float*);i++){
     		if(x<xpositions[i]){
     			low_x=xpositions[i];
     			continue;
@@ -124,7 +124,7 @@ class TsunamiScenario : public SWE_Scenario {
     	//i ist jetzt arrayindex des nächsten x-Wertes
 
     	//get closest y-value from the dataset to the required y value
-        float j;
+        int j;
     	for(j=0;j<sizeof(ypositions);j++){
     	    if(y<ypositions[j]){
     			low_y=ypositions[j];
@@ -153,13 +153,14 @@ class TsunamiScenario : public SWE_Scenario {
     };
 
     float getWaterHeight(float x, float y) {
-    	float xpositions[],ypositions[];
-    	float bathymetry[][];
+    	float xpositions[1000];
+    	float ypositions[1000];
+    	float bathymetry[1000][1000];
     	//parse WaterHeight
     	//similar to structure in getBathymetry
 		float closestx, closesty;
 		float low_x, high_x, low_y, high_y;
-		float i;
+		int i;
 		for (i = 0; i < sizeof(xpositions); i++) {
 			if (x < xpositions[i]) {
 				low_x = xpositions[i];
@@ -173,7 +174,7 @@ class TsunamiScenario : public SWE_Scenario {
 		if (abs(low_x - x) < abs(high_x - x)) {
 			i--;
 		}
-		float j;
+		int j;
 		for (j = 0; j < sizeof(ypositions); j++) {
 			if (y < ypositions[j]) {
 				low_y = ypositions[j];
